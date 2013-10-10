@@ -1,0 +1,104 @@
+.ui-slidedatepicker-body{
+    width: 50%;
+    height: 25px;
+    background: #ffc;
+    overflow: hidden;
+    position: relative;
+    /*border: 2px solid #ccc;*/
+    cursor: pointer;
+}
+
+.ui-slidedatepicker-wrapper{
+    left: 0;
+    position: absolute;
+    width: inherit;
+    margin-left: -3px;
+    height: 125%;
+}
+
+.ui-slidedatepicker-left-handler,.ui-slidedatepicker-right-handler{
+    height: 125%;
+    background-color: red;
+    z-index: 1;
+}
+
+.ui-slidedatepicker-left-handler{
+    float: left;
+}
+
+.ui-slidedatepicker-right-handler{
+    float: right;
+}
+
+.ui-slidedatepicker-right-handler:hover,.ui-slidedatepicker-left-handler:hover{
+    cursor: col-resize;
+}
+
+.ui-slidedatepicker-center-handler{
+    position: absolute;
+    opacity: 0.45;
+    filter:alpha(opacity=45);
+    width: 2.25em;
+    height: 125%;
+    background-color: #888;
+}
+
+.ui-slidedatepicker-mark-year{
+    background-color: black;
+    opacity: 0.45;
+    margin-top: 0.5em;
+    width: 3px;
+    margin-left: -1px;
+}
+
+.ui-slidedatepicker-y-marker{
+    font-size: 0.75em;
+    margin-left: 0.25em;
+    filter:alpha(opacity=80);
+    font-weight: bold;
+    color: blue;
+    cursor: default;
+}
+
+.ui-slidedatepicker-mark-month{
+    background-color: green;
+    width: 1px;
+    height: 25%;
+    margin-left: -0.5px;
+    position: absolute;
+}
+
+.ui-slidedatepicker-m-marker{
+    position:absolute;
+/*    top: -0.5em;*/
+    font-size: 0.5em;
+    color: #333;
+    font-weight: bold;
+    cursor: default;
+/*    z-index: 100;*/
+}
+
+.ui-slidedatepicker-mark-month{
+    height: 125%;
+}
+
+#ltip,#rtip{
+    position: relative;
+    width: 1em; 
+    height: 1em;
+    top: 1em;
+    font-weight: bold;
+    color: blue;
+    font-size: 0.8em;
+    z-index: 10;
+}
+
+#ltip{
+    text-align: right;
+    left: -1.3em;
+}
+
+#rtip{
+    text-align: left;
+    left: 0.3em;
+}

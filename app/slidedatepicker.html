@@ -1,0 +1,105 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Slide Datepicker</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Style -->
+        <link rel="stylesheet" href="../css/smoothness/ui.slidedatepicker.css" type="text/css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="../css/smoothness/ui.theme.css" type="text/css" media="screen" title="no title" charset="utf-8">
+        <!-- Core -->
+        <script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/ui/ui.core.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/ui/ui.slidedatepicker.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+            $(document).ready(function  () {
+                var count = 0;
+               $("#slideDatepicker").slidedatepicker({
+                   min: "Jan 1, 2008",
+                   change: function  (values) {
+                       $("#debug").html("<b>" + values[0].toString() + "</b> TO <b>" + values[1] + "</b>");
+                   },
+                   start: function  (values) {
+                       $("#count").html("#Start : " + ++count + " times");
+                   },
+                   stop: function  (values) {
+                       $("#diff").html((values[1]- values[0])/(24*60*60*1000) + " days");
+                   }
+               });
+            });
+        </script>
+    </head>
+    <body>
+        <h1 align='center'>Slide Datepicker</h1>
+        <div align='center'>
+            <div id="slideDatepicker">
+            </div>
+        </div>
+        <br><br>
+        <div align='center'>
+            <b>Start Callback</b>
+            <div id="count">
+                
+            </div>
+            <br>
+            <b>onChange Callback</b>
+            <div id="debug" width='100%'>
+                
+            </div>
+            <br>
+            <b>Stop Callback</b>
+            <div id="diff">
+                
+            </div>
+        </div>
+        <div id="config">
+            <h2>How to use ?</h2>
+            <xmp>
+                CODE : ######################################################################
+                <!-- include style -->
+                <link rel="stylesheet" href="../css/ui.slidedatepicker.css" type="text/css" media="screen" charset="utf-8">
+                <!-- core script -->
+                <script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+                <script src="../js/ui/ui.core.js" type="text/javascript" charset="utf-8"></script>
+                <script src="../js/ui/ui.slidedatepicker.js" type="text/javascript" charset="utf-8"></script>
+                
+                <script type="text/javascript" charset="utf-8">
+                    $(document).ready(function  () {
+                        // simple init
+                        $("#slidedate").slidedatepicker();
+                    });
+                </script>
+                
+                <!-- HTML -->
+                <div id="slidedate">
+                    
+                </div>
+                CODE : ######################################################################
+            </xmp>
+            <h2>Options[Default]</h2>
+            <xmp>
+                startDate: "Mar 1, 2009",   # default startDate on init
+                endDate: "May 31, 2009",    # default endDate on init
+                min: "Jan 1, 2007",         # min of this calendar
+                max: "Dec 31, 2012",        # max of this calendar
+                sensitivity: 20,            # TODO next
+                dragSpeed: 1,               # speed mouse while dragging
+                pxPerDay: 1,                # pixel length taken per day
+                tooltips: true,             # TODO next
+                change: function  () {},    # callback function(values) when drag any handlers
+                start: function  () {},     # callback function(values) on start dragging handlers
+                stop: function  () {},      # callback function(values) on stop dragging handlers
+                afterInit: function () {},  # callback function(values) after initial
+                // physical
+                rColor: "red",              # TODO next
+                lColor: "red",              # TODO next
+                cColor: "blue",             # TODO next
+                daysGap: 1                  # TODO next
+            </xmp>
+        </div>
+    </body>
+</html>
